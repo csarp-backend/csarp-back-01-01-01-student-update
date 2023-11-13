@@ -2,8 +2,6 @@
 
 namespace Kreata.Backend.Datas.Entities
 {
-   
-
     public class Student
     {
         public Guid Id { get; set; }
@@ -13,8 +11,9 @@ namespace Kreata.Backend.Datas.Entities
         public int SchoolYear { get; set; }
         public SchoolClassType SchoolClass { get; set; }
         public string EducationLevel { get; set; }
+        public bool IsWoomen { get; set; }
 
-        public Student(Guid id, string firstName, string lastName, DateTime birthsDay, int schoolYear, SchoolClassType schoolClass, string educationLevel)
+        public Student(Guid id, string firstName, string lastName, DateTime birthsDay, int schoolYear, SchoolClassType schoolClass, string educationLevel,bool isWooman)
         {
             Id = id;
             FirstName = firstName;
@@ -23,9 +22,10 @@ namespace Kreata.Backend.Datas.Entities
             SchoolYear = schoolYear;
             SchoolClass = schoolClass;
             EducationLevel = educationLevel;
+            IsWoomen= isWooman;
         }
 
-        public Student(string firstName, string lastName, DateTime birthsDay, int schoolYear, SchoolClassType schoolClass, string educationLevel)
+        public Student(string firstName, string lastName, DateTime birthsDay, int schoolYear, SchoolClassType schoolClass, string educationLevel, bool isWooman)
         {
             Id = new Guid();
             FirstName = firstName;
@@ -34,6 +34,7 @@ namespace Kreata.Backend.Datas.Entities
             SchoolYear = schoolYear;
             SchoolClass = schoolClass;
             EducationLevel = educationLevel;
+            IsWoomen = isWooman;
         }
 
         public Student()
@@ -45,10 +46,11 @@ namespace Kreata.Backend.Datas.Entities
             SchoolYear = 9;
             SchoolClass = SchoolClassType.ClassA;
             EducationLevel = string.Empty;
+            IsWoomen = false;
         }
 
         public override string ToString()
         {
-            return $"{LastName} {FirstName} ({SchoolYear}.{SchoolClass}) - ({String.Format("{0:yyyy.MM.dd.}", BirthsDay)}) ({EducationLevel})";
+            return $"{LastName} {FirstName} ({SchoolYear}.{SchoolClass}), Szül: ({String.Format("{0:yyyy.MM.dd.}", BirthsDay)}), Tanulmányi szint: ({EducationLevel})";
         }
     }
