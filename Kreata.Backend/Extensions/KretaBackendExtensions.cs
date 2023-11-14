@@ -24,13 +24,6 @@ namespace Kreata.Backend.Extensions
 
         public static void ConfigureInMemoryContext(this IServiceCollection services)
         {
-            /*   string dbName = "Authentication" + Guid.NewGuid();
-               services.AddDbContextFactory<KretaContext>(
-                   options => options.UseInMemoryDatabase(databaseName: dbName)
-                   );
-               services.AddDbContextFactory<KretaInMemoryContext>(
-                   options => options.UseInMemoryDatabase(databaseName: dbName)
-                   );*/
             string dbNameKretaContext = "Kreta" + Guid.NewGuid();
             services.AddDbContext<KretaContext>
             (
