@@ -30,7 +30,7 @@ namespace Kreata.Backend.Datas.Entities
 
         public Student()
         {
-            Id=new Guid();
+            Id = new Guid();
             FirstName = string.Empty;
             LastName = string.Empty;
             BirthsDay = new DateTime();
@@ -54,3 +54,4 @@ namespace Kreata.Backend.Datas.Entities
             return $"{LastName} {FirstName} ({SchoolYear}.{SchoolClass}), Szül: ({String.Format("{0:yyyy.MM.dd.}", BirthsDay)}), Tanulmányi szint: ({EducationLevel})";
         }
     }
+}

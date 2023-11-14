@@ -4,7 +4,7 @@ namespace Kreata.Backend.Repos
 {
     public interface IStudentRepo
     {
-        List<Student> GetAll();
-        Student? GetBy(Guid id);
+        Task<List<Student>> GetAll();
+        Task<Student?> GetBy(Guid id);
     }
 }

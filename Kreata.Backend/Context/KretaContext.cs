@@ -11,8 +11,10 @@ namespace Kreata.Backend.Context
             : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Seed();
             base.OnModelCreating(modelBuilder);
         }
     }

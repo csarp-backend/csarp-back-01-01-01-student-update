@@ -1,25 +1,27 @@
 ﻿using Kreata.Backend.Context;
 using Kreata.Backend.Datas.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kreata.Backend.Repos
 {
     public class StudentRepo : IStudentRepo
     {
-        private readonly KretaContext _dbContext;
+        private readonly KretaInMemoryContext _dbContext;
 
-        public StudentRepo(KretaContext dbContext)
+        public StudentRepo(KretaInMemoryContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public Student? GetBy(Guid id)
+        public async Task<Student?> GetBy(Guid id)
         {
-            return _dbContext.Students.FirstOrDefault(s => s.Id == id);
+            return await _dbContext.Students.FirstOrDefaultAsync(s => s.Id == id);
         }
 
-        public List<Student> GetAll()
+        public async Task<List<Student>> GetAll()
         {
-            return _dbContext.Students.ToList();
+            int count = _dbContext.Students.Count();
+            return await _dbContext.Students.ToListAsync();
         }
     }
 }
