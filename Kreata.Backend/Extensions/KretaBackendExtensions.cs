@@ -1,7 +1,6 @@
 ﻿using Kreata.Backend.Context;
 using Kreata.Backend.Repos;
 using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
 
 namespace Kreata.Backend.Extensions
 {
