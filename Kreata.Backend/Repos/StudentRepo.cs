@@ -20,7 +20,6 @@ namespace Kreata.Backend.Repos
 
         public async Task<List<Student>> GetAll()
         {
-            int count = _dbContext.Students.Count();
             return await _dbContext.Students.ToListAsync();
         }
     }
