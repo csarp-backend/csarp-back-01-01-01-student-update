@@ -45,6 +45,11 @@ namespace Kreata.Backend.Controllers
         [HttpPut()]
         public async Task<ActionResult> UpdateStudentAsync(Student entity)
         {
+            ControllerResponse response = new();
+            if (_studentRepo is not null)
+            {
+                response = await _studentRepo.UpdateStudentAsync(entity);
+            }
         }
     }
 }
