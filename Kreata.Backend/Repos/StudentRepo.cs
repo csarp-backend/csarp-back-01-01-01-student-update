@@ -1,5 +1,6 @@
 ﻿using Kreata.Backend.Context;
 using Kreata.Backend.Datas.Entities;
+using Kreata.Backend.Datas.Responses;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kreata.Backend.Repos
@@ -21,6 +22,11 @@ namespace Kreata.Backend.Repos
         public async Task<List<Student>> GetAll()
         {
             return await _dbContext.Students.ToListAsync();
+        }
+
+        public Task<ControllerResponse> UpdateStudentAsync(Student student)
+        {
+            throw new NotImplementedException();
         }
     }
 }
